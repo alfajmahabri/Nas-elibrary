@@ -1,10 +1,12 @@
 package dypcet.cloud.eLibrary.service;
 
 import dypcet.cloud.eLibrary.Entity.FileMetadata;
+import dypcet.cloud.eLibrary.Entity.FileUploadRequest;
 import dypcet.cloud.eLibrary.repository.FileMetadataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -25,16 +27,20 @@ public class FileService {
         return nasStorageService.loadFile(meta.getPath());
     }
 
-    public void uploadFile(MultipartFile file) {
+    public void uploadFile(MultipartFile file, FileUploadRequest fileUploadRequest) {
         if(!file.getContentType().equals("application/pdf")) {
             throw new RuntimeException("Not a PDF file");
         }
-        String storedName = UUID.randomUUID()+".pdf";
-        String path = nasStorageService.saveFile(file, storedName);
+        String storageFileName = UUID.randomUUID().toString() + ".pdf";
+        String path = nasStorageService.saveFile(file, storageFileName);
 
         FileMetadata meta = new FileMetadata();
         meta.setPath(path);
-        meta.setFileName(file.getOriginalFilename());
+        meta.setFileName(fileUploadRequest.getFileName());
+        meta.setAuthor(fileUploadRequest.getAuthor());
+        meta.setImageCover(fileUploadRequest.getImagecover());
+        meta.setDescription(fileUploadRequest.getDescription());
+        meta.setCategory(fileUploadRequest.getCategory());
         fileMetadataRepository.save(meta);
     }
 
