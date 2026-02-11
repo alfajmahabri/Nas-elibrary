@@ -27,10 +27,32 @@ public class FileService {
         return nasStorageService.loadFile(meta.getPath());
     }
 
+//    public void uploadFile(MultipartFile file, FileUploadRequest fileUploadRequest) {
+//        if(!file.getContentType().equals("application/pdf")) {
+//            throw new RuntimeException("Not a PDF file");
+//        }
+//        String storageFileName = UUID.randomUUID().toString() + ".pdf";
+//        String path = nasStorageService.saveFile(file, storageFileName);
+//
+//        FileMetadata meta = new FileMetadata();
+//        meta.setPath(path);
+//        meta.setFileName(fileUploadRequest.getFileName());
+//        meta.setAuthor(fileUploadRequest.getAuthor());
+//        meta.setImageCover(fileUploadRequest.getImagecover());
+//        meta.setDescription(fileUploadRequest.getDescription());
+//        meta.setCategory(fileUploadRequest.getCategory());
+//        fileMetadataRepository.save(meta);
+//    }
+
     public void uploadFile(MultipartFile file, FileUploadRequest fileUploadRequest) {
+
+        System.out.println("Upload method called");
+
         if(!file.getContentType().equals("application/pdf")) {
+            System.out.println("Not a PDF detected");
             throw new RuntimeException("Not a PDF file");
         }
+
         String storageFileName = UUID.randomUUID().toString() + ".pdf";
         String path = nasStorageService.saveFile(file, storageFileName);
 
@@ -41,7 +63,10 @@ public class FileService {
         meta.setImageCover(fileUploadRequest.getImagecover());
         meta.setDescription(fileUploadRequest.getDescription());
         meta.setCategory(fileUploadRequest.getCategory());
-        fileMetadataRepository.save(meta);
+
+        System.out.println("Saving metadata to Mongo...");
+        FileMetadata saved = fileMetadataRepository.save(meta);
+        System.out.println("Saved with ID: " + saved.getId());
     }
 
     public List<FileMetadata> listFiles() {
