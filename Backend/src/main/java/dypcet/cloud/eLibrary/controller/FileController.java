@@ -1,5 +1,7 @@
 package dypcet.cloud.eLibrary.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dypcet.cloud.eLibrary.Entity.FileMetadata;
 import dypcet.cloud.eLibrary.Entity.FileUploadRequest;
 import dypcet.cloud.eLibrary.service.FileService;
@@ -21,9 +23,12 @@ public class FileController {
     @PostMapping(value = "/upload", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<String> upload(
             @RequestPart("file") MultipartFile file,
-            @RequestPart("data") FileUploadRequest fileData) {
-        fileService.uploadFile(file, fileData);
+            @RequestParam("data") String fileDataJson) throws JsonProcessingException {
 
+        ObjectMapper mapper = new ObjectMapper();
+        FileUploadRequest fileData = mapper.readValue(fileDataJson, FileUploadRequest.class);
+
+        fileService.uploadFile(file, fileData);
         return ResponseEntity.ok("File uploaded successfully");
     }
 
