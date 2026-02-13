@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.parallax-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text readability */
+}
+
+.parallax-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.parallax-content p {
+  font-size: 1.2em;
+}
+
+.hero-section {
+  height: 500px; /* Adjust as needed */
+}
+
+.cta-section {
+  height: 400px; /* Adjust as needed */
+}
+
+.books-section {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #20426d; /* Theme color */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

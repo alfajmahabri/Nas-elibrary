@@ -49,4 +49,6 @@ public class FileController {
     public ResponseEntity<List<FileMetadata>> list() {
         return ResponseEntity.ok(fileService.listFiles());
     }
+
+
 }

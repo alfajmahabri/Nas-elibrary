@@ -1,0 +1,17 @@
+STEP 1. RUN MONGODB ON CUSTOM NETWORK BRIDGE
+ sudo docker run -d --name mongodb --network elibrary_net mongo:4.4
+
+if error : i.e Conflict. THe container name "/mongodb is already in use"
+Then use STEP 1 A =>
+
+	 sudo docker rm mongodb
+
+STEP 2. RUN SPRING BOOT BACKEND on the Same Network , Use Port Forwarding and environment variable. + MOUNT VOLUME 
+
+sudo docker run -d \
+  --name elibrary_backend \
+  --network elibrary_net \
+  -p 8080:8080 \
+  -v /mnt/nas:/mnt/nas \
+  -e SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/elibrary \
+  mahabrialfaj/elibrary:latest

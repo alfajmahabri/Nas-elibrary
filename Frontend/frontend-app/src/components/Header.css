@@ -1,0 +1,81 @@
+.header {
+  background-color: #20426d; /* Theme color */
+  padding: 15px 0;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #61dafb; /* React blue */
+}
+
+.logout-button {
+  background-color: white; /* Button background */
+  color: black; /* Button text black */
+  border: none; /* No border for consistency with landing-navbar-button */
+  padding: 8px 20px; /* Matched landing-navbar-button padding */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold; /* Matched landing-navbar-button font-weight */
+  margin-left: 15px; /* Added margin-left for consistency */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #f0f0f0; /* Slightly darker on hover */
+  color: black;
+}
+
+.manage-button {
+  background-color: #dc3545; /* Red background for admin button */
+  color: white; /* White text */
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: 15px; /* Consistent spacing */
+  text-decoration: none; /* For Link component */
+  display: inline-block; /* For Link component */
+  transition: background-color 0.3s ease;
+}
+
+.manage-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}

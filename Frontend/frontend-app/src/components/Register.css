@@ -1,0 +1,92 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #20426d; /* Theme background color */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.register-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.register-content h2 {
+  margin-bottom: 25px;
+  color: black;
+  font-size: 2.2em;
+}
+
+.register-content p {
+  margin-bottom: 30px;
+  color: black;
+  font-size: 1.1em;
+}
+
+.register-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: black;
+  font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+  background-color: #f8f9fa; /* Slightly off-white input background */
+}
+
+.register-submit-button {
+  background-color: #20426d; /* Secondary button background */
+  color: white; /* Secondary button text white */
+  padding: 12px 25px; /* Matched hero button padding */
+  border: none; /* No border */
+  border-radius: 25px; /* Matched hero button border-radius */
+  font-size: 1.1em;
+  font-weight: bold; /* Matched hero button font-weight */
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.register-submit-button:hover {
+  transform: translateY(-2px); /* Matched hero button hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Matched hero button hover effect */
+  background-color: #1a3556; /* Slightly darker on hover */
+}
+
+.error-message {
+  color: #dc3545; /* Red */
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.success-message {
+  color: #28a745; /* Green */
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  text-align: center;
+}
+

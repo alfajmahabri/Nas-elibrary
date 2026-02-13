@@ -1,0 +1,110 @@
+.landing-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #20426d; /* Theme background color */
+  color: white; /* Default text color */
+}
+
+/* Navbar Styling */
+.landing-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #20426d; /* Navbar background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.landing-navbar-logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white; /* Text white */
+  text-decoration: none;
+}
+
+.landing-navbar-buttons .landing-navbar-button {
+  background-color: white; /* Button background */
+  color: black; /* Button text black */
+  padding: 8px 20px;
+  border-radius: 20px; /* Rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.landing-navbar-buttons .landing-navbar-button:hover {
+  background-color: #f0f0f0; /* Slightly darker on hover */
+  color: black;
+}
+
+/* Hero Section Styling */
+.hero-header {
+  flex-grow: 1; /* Make hero section take remaining vertical space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background-color: white; /* Ensure consistent background */
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  color: black; /* Text black */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.3em;
+  color: #555; /* Slightly softer black */
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-button {
+  padding: 12px 25px;
+  border-radius: 25px; /* Rounded corners */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button {
+  background-color: white; /* Primary button background */
+  color: black; /* Text black */
+  border: 2px solid black;
+}
+
+.primary-button:hover {
+  background-color: #f0f0f0;
+}
+
+.secondary-button {
+  background-color: #20426d; /* Secondary button background */
+  color: white; /* Text white */
+  border: none; /* No border */
+}
+
+.secondary-button:hover {
+  background-color: #1a3556; /* Slightly darker on hover */
+  color: white;
+}

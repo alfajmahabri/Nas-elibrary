@@ -1,0 +1,49 @@
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* Ensure text is visible on parallax backgrounds */
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1; /* Place behind content */
+}
+
+#hero-parallax::before {
+  background-image: url('https://via.placeholder.com/1920x1080?text=Library+Background+1');
+}
+
+#cta-parallax::before {
+  background-image: url('https://via.placeholder.com/1920x1080?text=Library+Background+2');
+}
+
+/* Adjust these heights as per your App.css or specific needs */
+.hero-section {
+    height: 500px; /* Example height for hero section */
+}
+
+.cta-section {
+    height: 400px; /* Example height for CTA section */
+}
+
+.parallax-content {
+  /* Ensure content is positioned correctly above the pseudo-element */
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text readability */
+  border-radius: 8px;
+}
